@@ -14,13 +14,12 @@ function getOSinfo() {
     } else if (type === 'Windows_NT') {
         type = 'Windows';
     }
-
-    console.log(`\nSystem: ${type}`);
-    console.log(`Release: ${release}`);
-    console.log(`CPU model: ${cpu}`);
-    console.log(`Uptime [hh:mm:ss]: ${time.newTime(uptime)}`);
-    console.log(`User name: ${userInfo.username}`);
-    console.log(`Home dir: ${userInfo.homedir}\n`);
+    console.log('\nSystem:'.cyan, type);
+    console.log('Release:'.red, release);
+    console.log('CPU model:'.blue, cpu);
+    console.log('Uptime [hh:mm:ss]:'.green, time.newTime(uptime));
+    console.log('User name:'.yellow, userInfo.username);
+    console.log('Home dir:'.magenta, userInfo.homedir,'\n');
 }
 
 exports.print = getOSinfo;
